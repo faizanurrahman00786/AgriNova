@@ -28,60 +28,62 @@ function ProductList(props) {
         setModal(true);
 
 
-    async function fetchProducts() {
-
-        try {
-
-            let Response;
-
-            if (user.accountType === "farmer") {
-                Response = await fetch(
-                    `${process.env.REACT_APP_BASE_URL}/profile/getmyproducts`,
-                    {
-                        method: "GET",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        credentials: "include"
-                    }
-                );
-            }
-            else {
-                Response = await fetch(
-                    `${process.env.REACT_APP_BASE_URL}/product/getall-products`,
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({city:cityName}),
-                        credentials: "include"
-                    }
-                );
-            }
-
-            if (Response.ok) {
-                const data = await Response.json();
-                console.log(data.data);
-                setproductData(data.data);
-                // toast.success("Fetched all products successfully");
-
-            } else {
-                toast.error("Error in fetch products");
-              
-            }
-        }
-        catch (error) {
-            toast.error("Failed to fetch products.");
-            console.error("Failed to fetch products", error);
-        }
-
-    }
 
 
     useEffect(function () {
+
+        async function fetchProducts() {
+
+            try {
+
+                let Response;
+
+                if (user.accountType === "farmer") {
+                    Response = await fetch(
+                        `${process.env.REACT_APP_BASE_URL}/profile/getmyproducts`,
+                        {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            credentials: "include"
+                        }
+                    );
+                }
+                else {
+                    Response = await fetch(
+                        `${process.env.REACT_APP_BASE_URL}/product/getall-products`,
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({ city: cityName }),
+                            credentials: "include"
+                        }
+                    );
+                }
+
+                if (Response.ok) {
+                    const data = await Response.json();
+                    console.log(data.data);
+                    setproductData(data.data);
+                    // toast.success("Fetched all products successfully");
+
+                } else {
+                    toast.error("Error in fetch products");
+
+                }
+            }
+            catch (error) {
+                toast.error("Failed to fetch products.");
+                console.error("Failed to fetch products", error);
+            }
+
+        }
+
         fetchProducts();
-    }, [login,cityName])
+    }, [login, cityName])
 
     return (
         <div className="w-full flex flex-col items-center justify-center">

@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import profileImg from "../../assets/left_person.png";
 import ProductCard from "../Homepage/ProductCard";
@@ -11,57 +11,58 @@ function ProductListing(props) {
     const [productData, setproductData] = useState([]);
 
 
-    async function fetchProducts() {
-
-        try {
-
-            let Response;
-            if (login && user.accountType === "farmer") {
-                Response = await fetch(
-                    `${process.env.REACT_APP_BASE_URL}/profile/getmyproducts`,
-                    {
-                        method: "GET",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        credentials: "include"
-                    }
-                );
-            }
-            else {
-                Response = await fetch(
-                    `${process.env.REACT_APP_BASE_URL}/product/getall-products`,
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({city:cityName}),
-                        credentials: "include"
-                    }
-                );
-            }
-
-            if (Response.ok) {
-                const data = await Response.json();
-                setproductData(data.data);
-                // toast.success("Fetched all products successfully");
-
-            } else {
-                toast.error("Error in fetch products");
-            }
-        }
-        catch (error) {
-            toast.error("Failed to fetch products.");
-            console.error("Failed to fetch products", error);
-        }
-
-    }
-
 
     useEffect(function () {
+
+        async function fetchProducts() {
+
+            try {
+
+                let Response;
+                if (login && user.accountType === "farmer") {
+                    Response = await fetch(
+                        `${process.env.REACT_APP_BASE_URL}/profile/getmyproducts`,
+                        {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            credentials: "include"
+                        }
+                    );
+                }
+                else {
+                    Response = await fetch(
+                        `${process.env.REACT_APP_BASE_URL}/product/getall-products`,
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({ city: cityName }),
+                            credentials: "include"
+                        }
+                    );
+                }
+
+                if (Response.ok) {
+                    const data = await Response.json();
+                    setproductData(data.data);
+                    // toast.success("Fetched all products successfully");
+
+                } else {
+                    toast.error("Error in fetch products");
+                }
+            }
+            catch (error) {
+                toast.error("Failed to fetch products.");
+                console.error("Failed to fetch products", error);
+            }
+
+        }
+
         fetchProducts();
-    }, [login,cityName])
+    }, [login, cityName])
 
     return (
         <div className="w-full flex justify-between items-start gap-x-4 my-6">
@@ -92,7 +93,7 @@ function ProductListing(props) {
                     <ProductCard product={productData[0]} user={user} login={login}></ProductCard>
                     <ProductCard product={productData[1]} user={user} login={login}></ProductCard>
                     <ProductCard product={productData[2]} user={user} login={login}></ProductCard>
-                    <ProductCard product={ user?.accountType==="farmer" || productData.length<10? productData[3]: productData[9]} user={user} login={login}></ProductCard>
+                    <ProductCard product={user?.accountType === "farmer" || productData.length < 10 ? productData[3] : productData[9]} user={user} login={login}></ProductCard>
 
                 </div>
 

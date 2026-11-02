@@ -52,38 +52,6 @@ function ProductDetails(props) {
             setModal(true);
     }
 
-    async function fetchProductDetails() {
-
-        try {
-
-            const Response = await fetch(
-                `${process.env.REACT_APP_BASE_URL}/product/getproduct-details`,
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ productId: productID }),
-                    credentials: "include"
-                }
-            );
-
-
-            if (Response.ok) {
-                const data = await Response.json();
-               
-                setproductDetails(data.data);
-
-            } else {
-                toast.error("Error in fetch product details");
-            }
-        }
-        catch (error) {
-            toast.error("Failed to fetch product details.");
-            console.error("Failed to fetch product details", error);
-        }
-
-    }
 
 
     async function stockHandler() {
@@ -110,7 +78,7 @@ function ProductDetails(props) {
 
             if (Response.ok) {
                 const data = await Response.json();
-               
+
                 setproductDetails(data.data);
                 toast.success("Stock added successfully");
                 fetchProductDetails();
@@ -128,6 +96,40 @@ function ProductDetails(props) {
 
 
     useEffect(function () {
+
+        async function fetchProductDetails() {
+
+            try {
+
+                const Response = await fetch(
+                    `${process.env.REACT_APP_BASE_URL}/product/getproduct-details`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ productId: productID }),
+                        credentials: "include"
+                    }
+                );
+
+
+                if (Response.ok) {
+                    const data = await Response.json();
+
+                    setproductDetails(data.data);
+
+                } else {
+                    toast.error("Error in fetch product details");
+                }
+            }
+            catch (error) {
+                toast.error("Failed to fetch product details.");
+                console.error("Failed to fetch product details", error);
+            }
+
+        }
+
         fetchProductDetails();
     }, [productID])
 
@@ -165,13 +167,13 @@ function ProductDetails(props) {
                                     font-serif text-richblack-5 grb1 simplebutton">Modify Crop</button>
                                     <button onClick={() => navigate("/user/dashboard/add-products")} className="w-1/2 h-10 rounded-lg px-4
                                     font-serif text-richblack-5 grb2 simplebutton">Add New Crop</button>
-                                </div>:
-                                 <div className="w-full flex justify-center items-center gap-x-2">
-                                    <button className="w-1/2 h-10 rounded-lg px-4
+                                </div> :
+                                    <div className="w-full flex justify-center items-center gap-x-2">
+                                        <button className="w-1/2 h-10 rounded-lg px-4
                                     font-serif text-richblack-5 grb1 simplebutton">Contact Seller</button>
-                                    <button className="w-1/2 h-10 rounded-lg px-4
+                                        <button className="w-1/2 h-10 rounded-lg px-4
                                     font-serif text-richblack-5 grb2 simplebutton">Add to Cart</button>
-                                </div>}
+                                    </div>}
                             </div>
 
                             <div className="w-1/2 h-full p-2">
@@ -209,7 +211,7 @@ function ProductDetails(props) {
                             {productDetails?.seller?.product?.map((product, index) => (<ProductCard key={index} product={product} user={user} login={login}></ProductCard>))}
 
                         </div>
-                        
+
                     </div>
 
                     <div className="w-[30%] p-2 pl-4 flex flex-col items-start justify-center gap-y-1 rounded-md border border-richblack-100 CardShadow">
