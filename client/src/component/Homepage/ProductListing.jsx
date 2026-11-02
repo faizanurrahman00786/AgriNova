@@ -19,7 +19,7 @@ function ProductListing(props) {
             try {
 
                 let Response;
-                if (login && user?.accountType === "farmer") {
+                if (login && user.accountType === "farmer") {
                     Response = await fetch(
                         `${process.env.REACT_APP_BASE_URL}/profile/getmyproducts`,
                         {
@@ -62,7 +62,7 @@ function ProductListing(props) {
         }
 
         fetchProducts();
-    }, [login, cityName])
+    }, [login, cityName, user.accountType])
 
     return (
         <div className="w-full flex justify-between items-start gap-x-4 my-6">

@@ -7,10 +7,9 @@ function CropDis(props) {
 
     const { login, setModal } = props;
 
-    if (login)
-        setModal(false);
-    else
-        setModal(true);
+    useEffect(() => {
+        setModal(!login);
+    }, [login]);
 
     const [history, setHistory] = useState([]);
     const [report, setReport] = useState({});

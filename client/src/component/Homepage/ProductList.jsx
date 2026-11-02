@@ -22,10 +22,9 @@ function ProductList(props) {
 
     const [productData, setproductData] = useState([]);
 
-    if (login)
-        setModal(false);
-    else
-        setModal(true);
+    useEffect(() => {
+        setModal(!login);
+    }, [login]);
 
 
 
@@ -38,7 +37,7 @@ function ProductList(props) {
 
                 let Response;
 
-                if (user?.accountType === "farmer") {
+                if (user.accountType === "farmer") {
                     Response = await fetch(
                         `${process.env.REACT_APP_BASE_URL}/profile/getmyproducts`,
                         {
@@ -83,7 +82,7 @@ function ProductList(props) {
         }
 
         fetchProducts();
-    }, [login, cityName])
+    }, [login, cityName,user.accountType])
 
     return (
         <div className="w-full flex flex-col items-center justify-center">
