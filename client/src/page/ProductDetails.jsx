@@ -1,4 +1,3 @@
-
 import profileImg from "../assets/left_person.png";
 import ProductCard from "../component/Homepage/ProductCard";
 import { useState, useEffect } from "react";
@@ -78,10 +77,13 @@ function ProductDetails(props) {
 
             if (Response.ok) {
                 const data = await Response.json();
-
-                setproductDetails(data.data);
                 toast.success("Stock added successfully");
-                fetchProductDetails();
+
+                setproductDetails(prev => ({
+                    ...prev,
+                    stock: prev.stock + cartstock
+                }));
+
 
             } else {
                 toast.error("Error to add stock");
