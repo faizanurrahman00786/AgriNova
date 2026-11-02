@@ -24,7 +24,7 @@ function ProductList(props) {
 
     useEffect(() => {
         setModal(!login);
-    }, [login]);
+    }, [login, setModal]);
 
 
 

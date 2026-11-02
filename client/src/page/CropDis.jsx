@@ -1,3 +1,4 @@
+
 import DragAndDropInput from "../component/Dashboard/DragAndDropInput";
 import Button2 from "../component/Homepage/Button2";
 import { useState, useEffect } from "react";
@@ -9,7 +10,7 @@ function CropDis(props) {
 
     useEffect(() => {
         setModal(!login);
-    }, [login]);
+    }, [login, setModal]);
 
     const [history, setHistory] = useState([]);
     const [report, setReport] = useState({});
