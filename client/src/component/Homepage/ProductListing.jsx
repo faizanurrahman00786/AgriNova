@@ -19,7 +19,7 @@ function ProductListing(props) {
             try {
 
                 let Response;
-                if (login && user.accountType === "farmer") {
+                if (login && user?.accountType === "farmer") {
                     Response = await fetch(
                         `${process.env.REACT_APP_BASE_URL}/profile/getmyproducts`,
                         {

@@ -38,7 +38,7 @@ function ProductList(props) {
 
                 let Response;
 
-                if (user.accountType === "farmer") {
+                if (user?.accountType === "farmer") {
                     Response = await fetch(
                         `${process.env.REACT_APP_BASE_URL}/profile/getmyproducts`,
                         {
@@ -89,7 +89,7 @@ function ProductList(props) {
         <div className="w-full flex flex-col items-center justify-center">
             <div className=" flex justify-center w-[100%] frontImage ">
 
-                {user.accountType === "buyer" ? <div className="w-10/12  flex justify-end mr-20 gap-x-32  ">
+                {user?.accountType === "buyer" ? <div className="w-10/12  flex justify-end mr-20 gap-x-32  ">
 
                     <div>
                         <p className="text-3xl text-caribbeangreen-700 text-center pt-5 font-serif font-bold">Buy from Local Farmers<br></br>
@@ -126,7 +126,7 @@ function ProductList(props) {
 
             </div>
 
-            {user.accountType === "buyer" ? <div className="h-[75px] w-10/12 flex items-center justify-around border rounded-lg border-richblack-25 shadow-md p-1 px-12 gap-x-12 mt-10 bg-lightcream">
+            {user?.accountType === "buyer" ? <div className="h-[75px] w-10/12 flex items-center justify-around border rounded-lg border-richblack-25 shadow-md p-1 px-12 gap-x-12 mt-10 bg-lightcream">
 
                 <div className="w-[33%] flex justify-start items-center h-[100%] gap-x-4">
                     <img src={buyer} alt="/" className="h-full"></img>
@@ -220,7 +220,7 @@ function ProductList(props) {
                     <p className="mt-2 text-center text-richblack-400">You have visited all products.</p>
                 </div>
 
-                {user.accountType === "buyer" ? <div className="w-[20%] p-2 pl-4 flex flex-col items-start justify-center gap-y-1 rounded-md border border-richblack-50 shadow-lg">
+                {user?.accountType === "buyer" ? <div className="w-[20%] p-2 pl-4 flex flex-col items-start justify-center gap-y-1 rounded-md border border-richblack-50 shadow-lg">
 
                     <p className="font-semibold">Farmers Spotlight :</p>
 

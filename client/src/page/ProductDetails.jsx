@@ -76,7 +76,7 @@ function ProductDetails(props) {
 
 
             if (Response.ok) {
-                const data = await Response.json();
+                // const data= await Response.json();
                 toast.success("Stock added successfully");
 
                 setproductDetails(prev => ({
