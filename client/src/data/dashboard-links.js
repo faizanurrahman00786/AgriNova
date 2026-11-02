@@ -1,4 +1,4 @@
-import {  VscAccount, VscDashboard, VscVm, VscAdd, VscMortarBoard,VscHistory } from "react-icons/vsc";
+import {  VscAccount, VscDashboard, VscVm, VscAdd, VscHistory } from "react-icons/vsc";
 
 const sidebarLinks = [
   {

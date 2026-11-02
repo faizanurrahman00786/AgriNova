@@ -1,4 +1,4 @@
-import productImage from "../assets/crop_image.jpg"
+
 import profileImg from "../assets/left_person.png";
 import ProductCard from "../component/Homepage/ProductCard";
 import { useState, useEffect } from "react";
@@ -154,13 +154,13 @@ function ProductDetails(props) {
                             <div className="w-1/2 h-full  p-2">
                                 <p className="text-lg text-blue-500 font-semibold font-mono">Seller Information</p>
                                 <div className="h-[50%] w-full flex justify-between mt-2">
-                                    <img src={profileImg} className="w-1/5 h-4/5 pt-1 rounded-full bg-white border border-richblack-50 object-center"></img>
+                                    <img src={profileImg} alt="/" className="w-1/5 h-4/5 pt-1 rounded-full bg-white border border-richblack-50 object-center"></img>
                                     <div className="w-3/4">
                                         <p className="font-serif text-richblack-600 font-semibold">{productDetails?.seller?.firstName + " " + productDetails?.seller?.lastName} </p>
                                         <p className="font-serif text-richblack-600 select-none">{productDetails?.seller?.email}</p>
                                     </div>
                                 </div>
-                                {user?.accountType == "farmer" ? <div className="w-full flex justify-center items-center gap-x-2">
+                                {user?.accountType === "farmer" ? <div className="w-full flex justify-center items-center gap-x-2">
                                     <button onClick={() => navigate("/user/dashboard/price-update")} className="w-1/2 h-10 rounded-lg px-4
                                     font-serif text-richblack-5 grb1 simplebutton">Modify Crop</button>
                                     <button onClick={() => navigate("/user/dashboard/add-products")} className="w-1/2 h-10 rounded-lg px-4
@@ -214,13 +214,13 @@ function ProductDetails(props) {
 
                     <div className="w-[30%] p-2 pl-4 flex flex-col items-start justify-center gap-y-1 rounded-md border border-richblack-100 CardShadow">
 
-                        {login && user.accountType == "farmer" ? <p className="font-semibold text-richblack-700">Stock Information :</p> :
+                        {login && user.accountType === "farmer" ? <p className="font-semibold text-richblack-700">Stock Information :</p> :
                             <p className="font-semibold text-richblack-700">Cart Information :</p>}
 
                         <hr className="text-richblack-100 w-full"></hr>
 
                         <div className="w-full flex justify-between items-center gap-x-2 mt-2">
-                            <img src={productDetails?.image} className="w-1/4 h-12 rounded-md border border-richblack-100 object-center"></img>
+                            <img src={productDetails?.image} alt="/" className="w-1/4 h-12 rounded-md border border-richblack-100 object-center"></img>
                             <div>
                                 <p className="text-sm  font-mono text-richblack-800">{productDetails?.productName}</p>
                                 <p className="text-sm  font-mono text-richblack-800">Rs. {productDetails?.price}/kg</p>
@@ -240,7 +240,7 @@ function ProductDetails(props) {
                                 <p><span>Rs. </span>{totalPrice}</p>}
                         </div>
 
-                        {login && user.accountType == "farmer" ? <button onClick={stockHandler} className="h-9 rounded-lg px-4 mt-2 w-full
+                        {login && user.accountType === "farmer" ? <button onClick={stockHandler} className="h-9 rounded-lg px-4 mt-2 w-full
                             font-serif text-richblack-5 grb1 simplebutton">Add Stock</button> :
 
                             <button onClick={checkoutHandler} className="h-9 rounded-lg px-4 mt-2 w-full

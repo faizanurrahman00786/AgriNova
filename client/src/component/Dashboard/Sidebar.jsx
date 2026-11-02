@@ -10,7 +10,6 @@ function Sidebar(props) {
     const setisLogin = props.setisLogin;
     const user = props.user;
     const setUser = props.setUser;
-    const setcityName = props.setcityName;
 
 
     function logoutHandler() {

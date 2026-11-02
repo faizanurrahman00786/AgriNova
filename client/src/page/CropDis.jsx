@@ -17,7 +17,7 @@ function CropDis(props) {
     const [thumbnail, setThumbnail] = useState(null);
     const [upload, setupload] = useState([]);
 
-    const formData = new FormData;
+    const formData = new FormData();
     formData.append("cropImage", upload[0]);
 
 
@@ -108,7 +108,7 @@ function CropDis(props) {
                 </div>
 
                 <div className="w-full h-64 flex justify-center items-center my-6 p-4 border border-richblack-100 rounded-md gap-x-2 shadow-lg bg-richblack-5">
-                    <img src={thumbnail} className="w-1/4 h-full rounded-md"></img>
+                    <img src={thumbnail} alt="/" className="w-1/4 h-full rounded-md"></img>
 
                     <div className="w-3/4 h-full flex flex-col border border-richblack-100 rounded-lg px-2">
                         <div className="w-full flex justify-between items-center gap-x-2 py-1">

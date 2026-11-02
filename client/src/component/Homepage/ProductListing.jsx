@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import profileImg from "../../assets/left_person.png";
 import ProductCard from "../Homepage/ProductCard";
@@ -92,7 +92,7 @@ function ProductListing(props) {
                     <ProductCard product={productData[0]} user={user} login={login}></ProductCard>
                     <ProductCard product={productData[1]} user={user} login={login}></ProductCard>
                     <ProductCard product={productData[2]} user={user} login={login}></ProductCard>
-                    <ProductCard product={ user?.accountType=="farmer" || productData.length<10? productData[3]: productData[9]} user={user} login={login}></ProductCard>
+                    <ProductCard product={ user?.accountType==="farmer" || productData.length<10? productData[3]: productData[9]} user={user} login={login}></ProductCard>
 
                 </div>
 
@@ -105,19 +105,19 @@ function ProductListing(props) {
                 <hr className="text-richblack-200 w-full"></hr>
 
                 <div className="flex justify-between items-center gap-x-2">
-                    <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                    <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                     <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                 </div>
                 <div className="flex justify-between items-center gap-x-2">
-                    <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                    <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                     <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                 </div>
                 <div className="flex justify-between items-center gap-x-2">
-                    <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                    <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                     <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                 </div>
                 <div className="flex justify-between items-center gap-x-2">
-                    <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                    <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                     <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                 </div>
 

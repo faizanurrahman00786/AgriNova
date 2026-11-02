@@ -1,7 +1,6 @@
 
 import { useState } from "react"
 import { toast } from "sonner"
-import { HiOutlineCurrencyRupee } from "react-icons/hi"
 
 import { useNavigate, useParams } from "react-router-dom"
 import { FaUserEdit } from "react-icons/fa";
@@ -17,7 +16,7 @@ export default function UpdateForm() {
 
     const params = useParams();
     const productId = params.productId;
-    const productName = params.productName;
+    
 
     const navigate = useNavigate();
 

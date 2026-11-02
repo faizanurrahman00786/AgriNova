@@ -3,7 +3,7 @@ import Sidebar from "../component/Dashboard/Sidebar";
 
 function Dashboard(props) {
 
-    const { setisLogin, user, setcityName, setUser } = props;
+    const { setisLogin, user } = props;
 
     return (
        

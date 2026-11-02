@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { toast } from "sonner"
-import { HiOutlineCurrencyRupee } from "react-icons/hi"
 
 import DragAndDropInput from "../Dashboard/DragAndDropInput";
 import { useNavigate } from "react-router-dom"

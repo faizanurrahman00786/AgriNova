@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import image2 from "../../assets/partnership.png";
 import image1 from "../../assets/shield.png";
-import ProductCard from "../Homepage/ProductCard";
 import Button2 from "../Homepage/Button2";
 
  
@@ -52,7 +51,7 @@ function MyProduct() {
             <div className="w-10/12 flex flex-wrap justify-start  items-center bg-lightcream border border-richblack-100 p-6 mt-[14%] gap-2 gap-x-3 rounded-md shadow-xl">
 
                {myProduct?.map((product)=><div className="w-[24%] border border-richblack-50 rounded-lg pb-4 shadow-md card bg-lightcream">
-                    <img src={product?.image} className="w-full h-28 object-center rounded-t-lg" ></img>
+                    <img src={product?.image} alt="/" className="w-full h-28 object-center rounded-t-lg" ></img>
                     <div className="mt-2 pl-4 pr-2 space-y-1">
                         <p className="text-purple font-serif text-lg">{product?.productName} </p>
                         <hr className="text-richblack-50 my-1"></hr>
@@ -68,7 +67,7 @@ function MyProduct() {
 
             <div className="w-10/12 flex justify-between items-center my-4 gap-x-8">
                 <div className="w-1/2 flex gap-x-2 border border-richblack-50 rounded-lg shadow-lg p-4 pl-8 bg-lightcream">
-                    <img src={image1} className="h-16"></img>
+                    <img src={image1} alt="/" className="h-16"></img>
                     <div>
                         <p className="text-xl font-bold text-caribbeangreen-700">Safe & Secure</p>
                         <p>All transactions are strongly safe.</p>
@@ -78,7 +77,7 @@ function MyProduct() {
 
                 </div>
                 <div className="w-1/2 flex gap-x-2 border border-richblack-50 rounded-lg shadow-lg p-4 pl-8 bg-lightcream">
-                    <img src={image2} className="h-16"></img>
+                    <img src={image2} alt="/" className="h-16"></img>
                     <div>
                         <p className="text-xl font-bold text-caribbeangreen-700">Join Our Community</p>
                         <p>Connect with our community group.</p>

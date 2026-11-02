@@ -144,7 +144,7 @@ function OrderHistory(props) {
             </div>
             <div className="w-9/12 flex justify-between items-center mt-8 gap-x-8">
                 <div className="w-1/2 flex gap-x-2 border border-richblack-50 rounded-lg shadow-lg p-4 pl-8 bg-lightcream">
-                    <img src={image1} className="h-16"></img>
+                    <img src={image1} alt="/" className="h-16"></img>
                     <div>
                         <p className="text-xl font-bold text-caribbeangreen-700">Safe & Secure</p>
                         <p>All transactions are strongly safe.</p>
@@ -154,7 +154,7 @@ function OrderHistory(props) {
 
                 </div>
                 <div className="w-1/2 flex gap-x-2 border border-richblack-50 rounded-lg shadow-lg p-4 pl-8 bg-lightcream">
-                    <img src={image2} className="h-16"></img>
+                    <img src={image2} alt="/" className="h-16"></img>
                     <div>
                         <p className="text-xl font-bold text-caribbeangreen-700">Join Our Community</p>
                         <p>Connect with our community group.</p>

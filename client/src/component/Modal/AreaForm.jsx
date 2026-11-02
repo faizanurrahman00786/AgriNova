@@ -1,11 +1,10 @@
 
 import { useState } from "react";
-import { toast } from "sonner";
 
 
 function AreaForm(props) {
 
-    const { setcityModal, setcityName, cityName } = props;
+    const { setcityModal, setcityName } = props;
     const cityData = ["Patna", "Banglore"];
     const [formData, setFormData] = useState({city:""})
 

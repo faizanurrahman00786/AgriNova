@@ -7,7 +7,7 @@ function AboutIntro() {
     return (
         <div className="w-10/12 h-screen flex flex-col justify-between border border-richblack-50 rounded-lg p-4 mt-24 shadow-lg">
             <div className="flex items-center">
-                <img src={wheatplant} className="h-[75px]"/>
+                <img src={wheatplant} alt="/" className="h-[75px]"/>
                 <p className="text-caribbeangreen-700 text-3xl font-serif font-semibold p-4"> AgriNova: A Secure Marketplace</p>
             </div>
             {/* <p className="text-caribbeangreen-700 text-3xl font-serif font-semibold p-4"> About Us: Cultivating Connections</p> */}
@@ -15,7 +15,7 @@ function AboutIntro() {
             <div className="w-full h-1/3 flex justify-center items-center border border-richblack-50 rounded-lg shadow-lg">
 
                 <div className="flex justify-between items-start w-1/2 h-full p-4 gap-x-8 border border-richblack-5">
-                    <img src={leftperson} className="w-1/4 h-2/3 rounded-full border border-richblack-50 px-1 shadow-xl" ></img>
+                    <img src={leftperson} alt="/" className="w-1/4 h-2/3 rounded-full border border-richblack-50 px-1 shadow-xl" ></img>
                     <p className="w-2/3 px-4"><span className="text-lg font-bold">AgriNova is web application
                          designed to connect local farmers directly with buyers, </span>
                         
@@ -25,7 +25,7 @@ function AboutIntro() {
                             and administrative monitoring.</p>
                 </div>
 
-                <img src={Aboutimage} className="w-1/2 h-full rounded-r-lg"></img>
+                <img src={Aboutimage} alt="/" className="w-1/2 h-full rounded-r-lg"></img>
 
             </div>
 

@@ -73,7 +73,7 @@ function MSP() {
 
             <div className="w-9/12 flex justify-between items-center mt-8 gap-x-8">
                 <div className="w-1/2 flex gap-x-2 border border-richblack-50 rounded-lg shadow-lg p-4 pl-8">
-                    <img src={require} className="h-16"></img>
+                    <img src={require} alt="/" className="h-16"></img>
                     <div>
                         <p className="text-xl font-bold text-caribbeangreen-700">Govt. updates on MSP</p>
                         <p>Latest news & announcement</p>
@@ -83,7 +83,7 @@ function MSP() {
 
                 </div>
                 <div className="w-1/2 flex gap-x-2 border border-richblack-50 rounded-lg shadow-lg p-4 pl-8">
-                    <img src={analysis} className="h-16"></img>
+                    <img src={analysis} alt="/" className="h-16"></img>
                     <div>
                         <p className="text-xl font-bold text-caribbeangreen-700">Find Crop Disease</p>
                         <p>Analyze crop disease using AI.</p>

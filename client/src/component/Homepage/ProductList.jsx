@@ -4,13 +4,12 @@ import rightperson from "../../assets/right_person.png"
 import profileImg from "../../assets/left_person.png"
 import wheatplant from "../../assets/wheat-plant.png"
 import buyer from "../../assets/buyers.png"
-import cart from "../../assets/buyers.png"
 import shield from "../../assets/shield.png"
 import bestprice from "../../assets/best-price.png"
 import listimage from "../../assets/requirement.png"
 import Button1 from "../Homepage/Button1";
 import ProductCard from "./ProductCard";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
@@ -88,7 +87,7 @@ function ProductList(props) {
         <div className="w-full flex flex-col items-center justify-center">
             <div className=" flex justify-center w-[100%] frontImage ">
 
-                {user.accountType == "buyer" ? <div className="w-10/12  flex justify-end mr-20 gap-x-32  ">
+                {user.accountType === "buyer" ? <div className="w-10/12  flex justify-end mr-20 gap-x-32  ">
 
                     <div>
                         <p className="text-3xl text-caribbeangreen-700 text-center pt-5 font-serif font-bold">Buy from Local Farmers<br></br>
@@ -128,7 +127,7 @@ function ProductList(props) {
             {user.accountType === "buyer" ? <div className="h-[75px] w-10/12 flex items-center justify-around border rounded-lg border-richblack-25 shadow-md p-1 px-12 gap-x-12 mt-10 bg-lightcream">
 
                 <div className="w-[33%] flex justify-start items-center h-[100%] gap-x-4">
-                    <img src={buyer} className="h-full"></img>
+                    <img src={buyer} alt="/" className="h-full"></img>
                     <div>
                         <p className="font-semibold text-base">For Buyers</p>
                         <p className="text-sm">Purchase from local farmers</p>
@@ -138,7 +137,7 @@ function ProductList(props) {
                 <div className="border border-richblack-25 h-full "></div>
 
                 <div className="w-[33%] flex justify-start items-center h-full gap-x-4">
-                    <img src={bestprice} className="h-full"></img>
+                    <img src={bestprice} alt="/" className="h-full"></img>
                     <div>
                         <p className="font-semibold text-base">MSP Price Guarantee </p>
                         <p className="text-sm">Fair price for farmers and buyers</p>
@@ -148,7 +147,7 @@ function ProductList(props) {
                 <div className="border border-richblack-25 h-full"></div>
 
                 <div className="w-[33%] flex justify-start items-center h-[100%] gap-x-4">
-                    <img src={shield} className="h-full"></img>
+                    <img src={shield} alt="/" className="h-full"></img>
                     <div>
                         <p className="font-semibold text-base">Quality Assured</p>
                         <p className="text-sm">Local farm products & crops</p>
@@ -160,7 +159,7 @@ function ProductList(props) {
                 <div className="h-[75px] w-10/12 flex items-center justify-around border rounded-lg border-richblack-25 shadow-md p-1 px-12 gap-x-12 mt-10 bg-lightcream">
 
                     <div className="w-[33%] flex justify-start items-center h-full gap-x-4">
-                        <img src={wheatplant} className="h-full"></img>
+                        <img src={wheatplant} alt="/" className="h-full"></img>
                         <div>
                             <p className="font-semibold text-base">For Farmers</p>
                             <p className="text-sm">Sell your crops directly</p>
@@ -170,7 +169,7 @@ function ProductList(props) {
                     <div className="border border-richblack-25 h-full "></div>
 
                     <div className="w-[33%] flex justify-start items-center h-full gap-x-4">
-                        <img src={bestprice} className="h-full"></img>
+                        <img src={bestprice} alt="/" className="h-full"></img>
                         <div>
                             <p className="font-semibold text-base">MSP Price Guarantee </p>
                             <p className="text-sm">Fair price for farmers and buyers</p>
@@ -180,7 +179,7 @@ function ProductList(props) {
                     <div className="border border-richblack-25 h-full"></div>
 
                     <div className="w-[33%] flex justify-start items-center h-[100%] gap-x-4">
-                        <img src={listimage} className="h-full"></img>
+                        <img src={listimage} alt="/" className="h-full"></img>
                         <div>
                             <p className="font-semibold text-base">Manage Your Listing</p>
                             <p className="text-sm">Add new crops or stocks quickly.</p>
@@ -226,19 +225,19 @@ function ProductList(props) {
                     <hr className="text-richblack-200 w-full"></hr>
 
                     <div className="flex justify-between items-center gap-x-2">
-                        <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                        <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                         <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                     </div>
                     <div className="flex justify-between items-center gap-x-2">
-                        <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                        <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                         <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                     </div>
                     <div className="flex justify-between items-center gap-x-2">
-                        <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                        <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                         <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                     </div>
                     <div className="flex justify-between items-center gap-x-2">
-                        <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                        <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                         <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                     </div>
 
@@ -253,19 +252,19 @@ function ProductList(props) {
                         <hr className="text-richblack-200 w-full"></hr>
 
                         <div className="flex justify-between items-center gap-x-2">
-                            <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                            <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                             <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                         </div>
                         <div className="flex justify-between items-center gap-x-2">
-                            <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                            <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                             <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                         </div>
                         <div className="flex justify-between items-center gap-x-2">
-                            <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                            <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                             <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                         </div>
                         <div className="flex justify-between items-center gap-x-2">
-                            <img src={profileImg} className="w-8 h-8 rounded-full border border-richblack-100"></img>
+                            <img src={profileImg} alt="/" className="w-8 h-8 rounded-full border border-richblack-100"></img>
                             <p className="text-sm font-semibold text-caribbeangreen-800">GreenLeaf Organic</p>
                         </div>
 

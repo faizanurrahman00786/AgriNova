@@ -20,7 +20,7 @@ function ProductIntro(props) {
             <div className="h-[75px] w-[100%] flex items-center justify-around border rounded-lg border-richblack-25 shadow-md p-1 px-12 gap-x-12 bg-lightcream">
 
                 <div className="w-[33%] flex justify-start items-center h-full gap-x-4">
-                    <img src={wheatplant} className="h-full"></img>
+                    <img src={wheatplant} alt="/" className="h-full"></img>
                     <div>
                         <p className="font-semibold text-base">For Farmers</p>
                         <p className="text-sm">Sell your crops directly</p>
@@ -30,7 +30,7 @@ function ProductIntro(props) {
                 <div className="border border-richblack-25 h-full "></div>
 
                 <div className="w-[33%] flex justify-start items-center h-[100%] gap-x-4">
-                     <img src={buyer} className="h-full"></img>
+                     <img src={buyer} alt="/" className="h-full"></img>
                     <div>
                         <p className="font-semibold text-base">For Buyers</p>
                         <p className="text-sm">Purchase from local farmers</p>
@@ -40,7 +40,7 @@ function ProductIntro(props) {
                 <div className="border border-richblack-25 h-full"></div>
 
                 <div className="w-[33%] flex justify-start items-center h-[100%] gap-x-4">
-                    <img src={cart} className="h-full"></img>
+                    <img src={cart} alt="/" className="h-full"></img>
                     <div>
                         <p className="font-semibold text-base">Quality Assured</p>
                         <p className="text-sm">Local farm products & crops</p>
@@ -54,7 +54,7 @@ function ProductIntro(props) {
             <div className="h-[75px] w-[100%] flex items-center justify-around border rounded-lg border-richblack-25 shadow-md p-1 px-12 gap-x-12 mt-4 bg-lightcream">
 
                 <div className="w-[33%] flex justify-start items-center h-full gap-x-4">
-                    <img src={bestprice} className="h-full"></img>
+                    <img src={bestprice} alt="/" className="h-full"></img>
                     <div>
                         <p className="font-semibold text-base">MSP Price Guarantee </p>
                         <p className="text-sm">Fair price for farmers and buyers</p>
@@ -64,7 +64,7 @@ function ProductIntro(props) {
                 <div className="border border-richblack-25 h-full "></div>
 
                 <div className="w-[33%] flex justify-start items-center h-[100%] gap-x-4">
-                     <img src={secure} className="h-full"></img>
+                     <img src={secure} alt="/" className="h-full"></img>
                     <div>
                         <p className="font-semibold text-base">Secure & Easy</p>
                         <p className="text-sm">Safe and Reliable website</p>
@@ -74,7 +74,7 @@ function ProductIntro(props) {
                 <div className="border border-richblack-25 h-full"></div>
 
                 <div className="w-[33%] flex justify-start items-center h-[100%] gap-x-4">
-                    <img src={track} className="h-full"></img>
+                    <img src={track} alt="/" className="h-full"></img>
                     <div>
                         <p className="font-semibold text-base">Fast & Secure</p>
                         <p className="text-sm">Safe and quick transactions</p>
