@@ -4,7 +4,7 @@ async function mailSender(email, title, body) {
 
     try {
         let transporter = await nodemailer.createTransport({
-            host: smtp.gmail.com,
+            host: "smtp.gmail.com",
             auth: {
                 user: process.env.USER,
                 pass: process.env.PASS,
@@ -17,12 +17,11 @@ async function mailSender(email, title, body) {
             html: body
         })
 
+        return emailInfo;
+
     } catch (error) {
         console.log(error);
-        return res.status(500).json({
-            success: false,
-            message: "Email not sent",
-        })
+       
     }
 
 }

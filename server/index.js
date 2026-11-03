@@ -23,10 +23,10 @@ app.use(cors({
 }));
 
 const dbConnect = require("./config/database");
-dbConnect();
+await dbConnect();
 
 const cloudinaryConnect = require("./config/cloudinary");
-cloudinaryConnect();
+await cloudinaryConnect();
 
 const user = require("./routes/user");
 const profile = require("./routes/profile");
