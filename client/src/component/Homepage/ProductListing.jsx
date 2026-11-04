@@ -49,8 +49,8 @@ function ProductListing(props) {
 
                 if (Response.ok) {
                     const data = await Response.json();
-                    setloading(false);
                     setproductData(data.data);
+                    setloading(false);
                     // toast.success("Fetched all products successfully");
 
                 } else {
@@ -103,7 +103,7 @@ function ProductListing(props) {
                                     <div className="mt-2 pl-4 pr-2">
                                         <div className="h-6 w-3/4 bg-richblack-100 rounded"></div>
 
-                                        <hr className="my-2 bg-richblack-100" />
+                                        <hr className="my-2 text-richblack-100" />
 
                                         <div className="h-5 w-full bg-richblack-100 rounded"></div>
 
