@@ -98,18 +98,18 @@ function ProductListing(props) {
                             {[1, 2, 3, 4].map((_, index) => (
                                 <div key={index} className="w-[24%] border border-richblack-50 rounded-lg pb-4 shadow-md bg-lightcream animate-pulse">
                                     
-                                    <div className="w-full h-40 bg-gray-300 rounded-t-lg"></div>
+                                    <div className="w-full h-40 bg-richblack-100 rounded-t-lg"></div>
 
                                     <div className="mt-2 pl-4 pr-2">
-                                        <div className="h-6 w-3/4 bg-gray-300 rounded"></div>
+                                        <div className="h-6 w-3/4 bg-richblack-100 rounded"></div>
 
-                                        <hr className="my-2" />
+                                        <hr className="my-2 bg-richblack-100" />
 
-                                        <div className="h-5 w-full bg-gray-300 rounded"></div>
+                                        <div className="h-5 w-full bg-richblack-100 rounded"></div>
 
-                                        <div className="h-5 w-4/5 bg-gray-300 rounded mt-2"></div>
+                                        <div className="h-5 w-4/5 bg-richblack-100 rounded mt-2"></div>
 
-                                        <div className="h-10 w-full bg-gray-300 rounded mt-4"></div>
+                                        <div className="h-10 w-full bg-richblack-100 rounded mt-4"></div>
                                     </div>
                                 </div>
                             ))}
