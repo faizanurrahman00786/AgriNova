@@ -10,6 +10,8 @@ function ProductListing(props) {
 
     const [productData, setproductData] = useState([]);
 
+    const [loading, setloading] = useState(true);
+
 
 
     useEffect(function () {
@@ -47,6 +49,7 @@ function ProductListing(props) {
 
                 if (Response.ok) {
                     const data = await Response.json();
+                    setloading(false);
                     setproductData(data.data);
                     // toast.success("Fetched all products successfully");
 
@@ -62,7 +65,7 @@ function ProductListing(props) {
         }
 
         fetchProducts();
-    }, [login, cityName, user.accountType])
+    }, [login, cityName, user.accountType, setloading])
 
     return (
         <div className="w-full flex justify-between items-start gap-x-4 my-6">
@@ -88,12 +91,40 @@ function ProductListing(props) {
 
                 <hr className="text-richblack-50 my-2"></hr>
 
-                <div className="w-full flex flex-wrap justify-between items-center gap-y-4">
+                <div className="w-full">
 
-                    <ProductCard product={productData[0]} user={user} login={login}></ProductCard>
-                    <ProductCard product={productData[1]} user={user} login={login}></ProductCard>
-                    <ProductCard product={productData[2]} user={user} login={login}></ProductCard>
-                    <ProductCard product={user?.accountType === "farmer" || productData.length < 10 ? productData[3] : productData[9]} user={user} login={login}></ProductCard>
+                    {loading ? (
+                        <div className="w-full flex flex-wrap justify-between items-center gap-y-4">
+                            <div className="animate-pulse">
+                                <div className="h-40 bg-gray-200 rounded"></div>
+                                <div className="h-4 bg-gray-200 rounded mt-2"></div>
+                                <div className="h-4 bg-gray-200 rounded mt-2 w-3/4"></div>
+                            </div>
+                             <div className="animate-pulse">
+                                <div className="h-40 bg-gray-200 rounded"></div>
+                                <div className="h-4 bg-gray-200 rounded mt-2"></div>
+                                <div className="h-4 bg-gray-200 rounded mt-2 w-3/4"></div>
+                            </div>
+                             <div className="animate-pulse">
+                                <div className="h-40 bg-gray-200 rounded"></div>
+                                <div className="h-4 bg-gray-200 rounded mt-2"></div>
+                                <div className="h-4 bg-gray-200 rounded mt-2 w-3/4"></div>
+                            </div>
+                             <div className="animate-pulse">
+                                <div className="h-40 bg-gray-200 rounded"></div>
+                                <div className="h-4 bg-gray-200 rounded mt-2"></div>
+                                <div className="h-4 bg-gray-200 rounded mt-2 w-3/4"></div>
+                            </div>
+                        </div>
+                    ) :
+
+                        (<div className="w-full flex flex-wrap justify-between items-center gap-y-4">
+                            <ProductCard product={productData[0]} user={user} login={login}></ProductCard>
+                            <ProductCard product={productData[1]} user={user} login={login}></ProductCard>
+                            <ProductCard product={productData[2]} user={user} login={login}></ProductCard>
+                            <ProductCard product={user?.accountType === "farmer" || productData.length < 10 ? productData[3] : productData[9]} user={user} login={login}></ProductCard>
+                        </div>)
+                    }
 
                 </div>
 
@@ -128,7 +159,7 @@ function ProductListing(props) {
 
 
 
-        </div>
+        </div >
     )
 }
 export default ProductListing;
