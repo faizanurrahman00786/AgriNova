@@ -95,26 +95,24 @@ function ProductListing(props) {
 
                     {loading ? (
                         <div className="w-full flex flex-wrap justify-between items-center gap-y-4">
-                            <div className="animate-pulse">
-                                <div className="h-40 bg-gray-200 rounded"></div>
-                                <div className="h-4 bg-gray-200 rounded mt-2"></div>
-                                <div className="h-4 bg-gray-200 rounded mt-2 w-3/4"></div>
-                            </div>
-                             <div className="animate-pulse">
-                                <div className="h-40 bg-gray-200 rounded"></div>
-                                <div className="h-4 bg-gray-200 rounded mt-2"></div>
-                                <div className="h-4 bg-gray-200 rounded mt-2 w-3/4"></div>
-                            </div>
-                             <div className="animate-pulse">
-                                <div className="h-40 bg-gray-200 rounded"></div>
-                                <div className="h-4 bg-gray-200 rounded mt-2"></div>
-                                <div className="h-4 bg-gray-200 rounded mt-2 w-3/4"></div>
-                            </div>
-                             <div className="animate-pulse">
-                                <div className="h-40 bg-gray-200 rounded"></div>
-                                <div className="h-4 bg-gray-200 rounded mt-2"></div>
-                                <div className="h-4 bg-gray-200 rounded mt-2 w-3/4"></div>
-                            </div>
+                            {[1, 2, 3, 4].map((_, index) => (
+                                <div key={index} className="w-[24%] border border-richblack-50 rounded-lg pb-4 shadow-md bg-lightcream animate-pulse">
+                                    
+                                    <div className="w-full h-40 bg-gray-300 rounded-t-lg"></div>
+
+                                    <div className="mt-2 pl-4 pr-2">
+                                        <div className="h-6 w-3/4 bg-gray-300 rounded"></div>
+
+                                        <hr className="my-2" />
+
+                                        <div className="h-5 w-full bg-gray-300 rounded"></div>
+
+                                        <div className="h-5 w-4/5 bg-gray-300 rounded mt-2"></div>
+
+                                        <div className="h-10 w-full bg-gray-300 rounded mt-4"></div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     ) :
 
